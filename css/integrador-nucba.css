@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: black;
+    border: none;
+}
+
+/* Nav Styles START*/
+header {
+    width: 100%;
+    background-color: black;
+}
+
+.nav-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: .7rem 1rem;
+}
+
+/* Este nav tiene el contenido */
+.nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.nav__img-container {
+    width: auto;
+    height: 100%; /* Averiguar porque cuando pongo auto, la imagen se agranda y por ende me agranda este div. CREO QUE TIENE QUE VER CON ALGO DE FLEX, por que esto me paso cuando le aplique align items al padre de este elemento (el .nav de arriba) */
+}
+
+.nav__img-container > img {
+    max-height: 100%;
+}
+
+
+/* Links styles */
+.nav__links-container {
+    display: flex;
+    gap: 20px;
+}
+
+.link {
+    border: 2px solid rgb(134, 27, 48);
+    background-color: rgba(43, 43, 43, 0.957);
+}
+
+.link a {
+    color: white;
+    font-weight: 600;
+}
+
+
+
+
+/* Nav Styles END*/
