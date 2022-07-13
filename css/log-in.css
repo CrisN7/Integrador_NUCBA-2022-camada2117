@@ -1,0 +1,325 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: white;
+}
+
+
+/*---------- Nav Styles START ----------*/
+header {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    width: 100%;
+    padding: .7rem 1rem;
+}
+
+/* Este nav tiene el contenido */
+.nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.nav__img-container {
+    width: auto;
+    height: 100%; /* Averiguar porque cuando pongo auto, la imagen se agranda y por ende me agranda este div. CREO QUE TIENE QUE VER CON ALGO DE FLEX, por que esto me paso cuando le aplique align items al padre de este elemento (el .nav de arriba) */
+}
+
+.nav__img-container > img {
+    max-height: 100%;
+}
+
+
+/* Links styles */
+.nav__links-container {
+    display: flex;
+    gap: 20px;
+}
+
+.link {
+    padding: .5rem 1rem;
+    background-color: gray;
+
+    --edge-size: .80rem;
+    --border-width: .30rem;
+    --border-color: linear-gradient(to bottom right, red, blue);
+    --background-color: rgb(74, 74, 74);
+
+
+    /*Este clip-path es para definir el "marco" del elemento, despues le definimos el background linear gradient en el pseudo elemento before*/
+    clip-path: polygon(
+        /*----Puntos del Background Linear Gradient----*/
+        /*top left 1*/
+        0% var(--edge-size), /*El primer valor se refiere a la longitud desde left hacia right, y el segundo valor desde top hacia bottom*/
+
+        /*top left 2*/
+        var(--edge-size) 0%, 
+        
+        /*top right*/
+        100% 0, 
+
+        /*bottom right 1*/
+        100% calc(100% - var(--edge-size)), /*El valor de la derecha, antes era 80% pero usar porcentaje tiene un problema, que es que depende del contenido adentro y lo que yo quiero es que sea igual para todas las esquinas con este valor, asi que lo envolvemos en un calc()*/
+
+        /*bottom right 2*/
+        calc(100% - var(--edge-size)) 100%, 
+        
+        /*bottom left*/
+        0 100%
+        );
+
+    position: relative;
+    isolation: isolate; /*Segun Powell, esto crea un nuevo stacking context sin efectos secundarios y lo bueno de eso es que el "z-index: -2" definido en .link::before es relativo o encapsulado dentro de .link en lugar de ser relativo a la pagina entera como normalmente se supondria*/
+}
+
+.link::before,
+.link::after {
+    content: '';
+    position: absolute;
+    inset: 0; /*Segun Kevin Powell, esto es lo mismo que decir top, right, bottom y left sean 0*/
+}
+
+.link::before {
+    background: var(--border-color);
+    z-index: -2; /*Usualmente cuando Powell usa z-index en pseudo elements, le gusta ir al elemento al que se le aplica el pseudo-elemento (elemento padre) y definirle un isolation */
+}
+
+.link::after {
+    background: var(--background-color);
+    z-index: -1;
+
+    clip-path: polygon(
+        /*----Puntos del marco del Background Color Solid----*/
+        /*top left 1*/
+        var(--border-width)
+        calc(var(--edge-size) + var(--border-width) * .5), /*Edit: Cambie el 0% por el .30rem porque el 0 hacia que el background solid se alinie exactamente igual que el background linear gradient que no me dejaba verlo, entonces al definir .30rem creo un efecto de borde falso usando las dos capas de pseudo elementos.
+        Edit: Cambie el .30rem por la variable personalizada --border-width que tiene el mismo valor .30rem, y asi despues poder cambiar ESE valor en cualquier parte con solo modificar la variable*/
+
+        /*top left 2*/
+        calc(var(--edge-size) + var(--border-width) * .5) /*El primer valor se refiere a la longitud desde left hacia right, y el segundo valor desde top hacia bottom*/
+        var(--border-width), 
+        
+        /*top right*/
+        calc(100% - var(--border-width))
+        var(--border-width), /*Al valor de la izquierda, que antes era solo un 100% nos traia un problema y es que significaba que el punto esta hasta el final de la coordenada izquierda, es decir desde la coordenada de la izquierda ocupaba toodo el espacio horizontal hasta la coordenada de la derecha, y no nos dejaba ver el background de linear gradient que esta debajo. Entonces lo envolvemos en un calc(), y cambiamos TODOS los 100% por 100% - .30rem*/
+
+        /*bottom right 1*/
+        calc(100% - var(--border-width))
+        calc(100% - calc(var(--edge-size) + var(--border-width) * .5)),
+
+        /*bottom right 2*/
+        calc(100% - calc(var(--edge-size) + var(--border-width) * .5))
+        calc(100% - var(--border-width)), 
+        
+        /*bottom left*/
+        var(--border-width)
+        calc(100% - var(--border-width))
+    );
+
+    transition: clip-path .5s;
+}
+
+.link:hover::after {
+    clip-path: polygon(
+        /*top left 1*/
+        calc(100% - var(--border-width))
+        calc(100% - calc(var(--edge-size) + var(--border-width) * .5)),
+
+        /*top left 2*/
+        calc(100% - var(--border-width))
+        var(--border-width), 
+        
+        /*top right*/
+        calc(100% - var(--border-width))
+        var(--border-width),
+
+        /*bottom right 1*/
+        calc(100% - var(--border-width))
+        calc(100% - calc(var(--edge-size) + var(--border-width) * .5)),
+
+        /*bottom right 2*/
+        calc(100% - calc(var(--edge-size) + var(--border-width) * .5))
+        calc(100% - var(--border-width)), 
+        
+        /*bottom left*/
+        calc(100% - calc(var(--edge-size) + var(--border-width) * .5))
+        calc(100% - var(--border-width))
+    );
+}
+
+.link > a {
+    font-weight: 600;
+}
+
+/* Nav Styles END*/
+
+
+
+/*Log In Container Styles START*/
+
+#login-container {
+    width: 600px;
+    margin: 70px auto;
+    padding: 1rem;
+}
+
+.login-formulario {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    padding: .7rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    outline: none;
+}
+
+.forgotPassword-container > a {
+    font-weight: bold;
+    color: black;
+}
+
+
+.formButton {
+    color: white;
+    background-color: black;
+}
+
+.buttonStyles {
+    width: 100%;
+    height: 4rem;
+    padding: .7rem 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.formButton:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+/*Log In Container Styles END*/
+
+
+
+/*Create Account Styles START*/
+
+.createAccount-container {
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgb(158, 158, 158); /*Esto es para el efecto hr*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.createAccount-link {
+    width: 100%;
+}
+
+.createAccount-link > a {
+    border: 1px solid #000;
+    background-color: white;
+    color: black;
+}
+
+/*Create Account Styles END*/
+
+
+
+
+/*Footer Styles START*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+
+
+    background-color: black;
+    color: white;
+}
+
+.footerLeft {
+    max-width: 300px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.footerLeft__imgContainer {
+    width: 100px;
+    height: auto;
+
+}
+
+.footerLeft__imgContainer > img {
+    width: 100%;
+    height: auto;
+
+}
+
+
+.footerRight {
+    padding: 3rem 1rem;
+    display: flex;
+    gap: 100px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.flexRowGap {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.socials {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.contactLinkIcon {
+    margin-right: 8px;
+}
+
+/*Footer Styles END*/

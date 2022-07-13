@@ -21,13 +21,13 @@
                 </div>
                 <ul class="nav__links-container">
                     <li class="link">
-                        <a href="#">Lorem, ipsum.</a>
+                        <a href="integrador-nucba.html">Inicio</a>
                     </li>
                     <li class="link">
-                        <a href="#">Iniciar Sesion</a>
+                        <a href="log-in.html">Iniciar Sesion</a>
                     </li>
                     <li class="link">
-                        <a href="#">No estas registrado todavia? Que esperas?!</a>
+                        <a href="register.html">No estas registrado todavia? Que esperas?!</a>
                     </li>
                 </ul>
             </div>
@@ -37,14 +37,14 @@
         <!--Hero text e image START-->
         <div id="hero">
             <div class="hero__text">
-            <h1>Upgrade your POWER!</h1>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
-                ipsum.
-            </p>
+                <h1>Upgrade your POWER!</h1>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                    ipsum.
+                </p>
             </div>
             <div class="hero__img-container">
-            <img src="hero-img.jpg" alt="hero image" />
+                <img src="hero-img.jpg" alt="hero image" />
             </div>
         </div>
         <!--Hero text e image END-->
@@ -52,7 +52,7 @@
         <!-- Info section/ o de imagenes START-->
         <div id="info-section">
             <div class="info-section__box">
-                <div class="__img-container">
+                <div class="info-section__img-container">
                     <img src="mass-effect-vanguard.jpg" alt="shep-vanguard" />
                 </div>
                 <div class="info-section__text">
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="info-section__box">
-                <div class="__img-container">
+                <div class="info-section__img-container">
                     <img src="Vanguard_Profile.webp" alt="Vanguard body M-E Andromeda" />
                 </div>
                 <div class="info-section__text">
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="info-section__box">
-                <div class="__img-container">
+                <div class="info-section__img-container">
                     <img src="fire-masseffect.jpg" alt="shep siendo oneshoteado" />
                 </div>
                 <div class="info-section__text">
@@ -82,15 +82,21 @@
                 </div>
             </div>
         </div>
+        <!-- Info section/ o de imagenes END-->
+
+        <!-- Formulario de Contacto START-->
         <div id="contact-section">
+            <h2>Ponte en contacto!</h2>
             <form action="">
-                <div class="form-group">
-                    <label for="input-name">Nombre:</label>
-                    <input type="text" placeholder="Escribi tu nombre..." name="input-name">
-                </div>
-                <div class="form-group">
-                    <label for="input-surname">Apellido:</label>
-                    <input type="text" placeholder="Escribi tu apellido..." name="input-surname">
+                <div class="fullNameGroup">
+                    <div class="form-group">
+                        <label for="input-name">Nombre:</label>
+                        <input type="text" placeholder="Escribi tu nombre..." name="input-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-surname">Apellido:</label>
+                        <input type="text" placeholder="Escribi tu apellido..." name="input-surname">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="input-email">Correo Electronico:</label>
@@ -100,50 +106,82 @@
                     <label for="input-number">Telefono/Celular:</label>
                     <input type="number" placeholder="Escribi tu numero..." name="input-number">
                 </div>
-                <div class="form-group">
+                <div class="form-group textarea">
                     <label for="input-textArea">Algun comentario o sugerencia?</label>
                     <textarea name="input-textArea" id="" cols="30" rows="10"></textarea>
                 </div>
+                <button href="#" class="form-button">
+                    <span class="form-button__text">Enviar</span>
+                </button>
             </form>
         </div>
-        <!-- Info section/ o de imagenes END-->
+        <!-- Formulario de Contacto END-->
 
         <!-- Footer START-->
         <footer id="footer">
-            <ul class="other-links-container">
-                <li class="other-link">
-                    <a href="#" target="_blank">
-                        Politicas de Privacidad y de Cookies
-                    </a>
-                </li>
-                <li class="other-link">
-                    <a href="#" target="_blank">
-                        Terminos y Condiciones
-                    </a>
-                </li>
-                <li class="other-link">
-                    <a href="#" target="_blank">
-                        Asistencia Tecnica
-                    </a>
-                </li>
-                <li class="other-link">
-                    <a href="#" target="_blank">
-                        Avisos de Salud
-                    </a>
-                </li>
-            </ul>
-            <!-- Redes Sociales -->
-            <ul class="socials-container">
-                <li class="socials">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li class="socials">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li class="socials">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
+            <div class="footerLeft">
+                <div class="footerLeft__imgContainer">
+                    <img src="logo.png" alt="">
+                </div>
+                <div class="footerLeft__text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum modi corrupti sunt esse facilis. Esse, beatae! Optio, inventore repudiandae.</p>
+                </div>
+            </div>
+            <div class="footerRight">
+                <!-- Mas Informacion -->
+                <ul class="moreInfo-links-container linksVerticalSpace">
+                    <h3>Mas Informacion:</h3>
+                    <li class="moreInfoLink">
+                        <a href="#" target="_blank">
+                            Politicas de Privacidad y de Cookies
+                        </a>
+                    </li>
+                    <li class="moreIngoLink">
+                        <a href="#" target="_blank">
+                            Terminos y Condiciones
+                        </a>
+                    </li>
+                    <li class="moreInfoLink">
+                        <a href="#" target="_blank">
+                            Asistencia Tecnica
+                        </a>
+                    </li>
+                    <li class="moreInfoLink">
+                        <a href="#" target="_blank">
+                            Avisos de Salud
+                        </a>
+                    </li>
+                </ul>
+                <!-- Redes Sociales -->
+                <ul class="socials-container">
+                    <h3>Redes Sociales:</h3>
+                    <li class="socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="socials">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+                <!-- Contacto -->
+                <ul class="contact-container linksVerticalSpace">
+                    <h3>Contacto:</h3>
+                    <li class="contact-link">
+                        <i class="contactLinkIcon fa-solid fa-location-dot"></i>
+                        Calle Cualquiera 123, Cualquier Lugar
+                    </li>
+                    <li class="contact-link">
+                        <i class="contactLinkIcon fa-solid fa-phone"></i>
+                        Cel: 1234-5678
+                    </li>
+                    <li class="contact-link">
+                        <i class="contactLinkIcon fa-solid fa-envelope"></i>
+                        hola@sitioincreible.com
+                    </li>
+                </ul>
+            </div>
         </footer>
         <!-- Footer END-->
     </main>

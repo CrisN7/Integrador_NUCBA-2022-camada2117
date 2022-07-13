@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="https://kit.fontawesome.com/290637c6ed.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <title>Registrarse | Vanguard</title>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="nav">
+                <div class="nav__img-container">
+                    <img src="logo.png" alt="" />
+                    <!-- SEGUN NUCBA, NO HACE FALTA ALT EN LA IMAGEN DEL LOGO (del navbar) -->
+                </div>
+                <ul class="nav__links-container">
+                    <li class="link">
+                        <a href="integrador-nucba.html">Inicio</a>
+                    </li>
+                    <li class="link">
+                        <a href="log-in.html">Iniciar Sesion</a>
+                    </li>
+                    <li class="link">
+                        <a href="register.html">No estas registrado todavia? Que esperas?!</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Register container START-->
+        <div id="register-container">
+            <h1>Registrarse</h1>
+            <form class="register-formulario" action="#">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name"/>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Apellidos:</label>
+                    <input type="text" name="surname"/>
+                </div>
+                <div class="form-group">
+                    <label for="mail">Correo Electronico:</label>
+                    <input type="email" name="mail"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password"/>
+                </div>
+                <div class="termsCheckbox-container">
+                    <input type="checkbox" name="termsCheckbox" id="termsInput">
+                    <label for="termsCheckbox">He leido y acepto los <a href="#" class="termsLink">Términos del Servicio</a> y <a href="#" class="termsLink">Política de Privacidad</a></label>
+                </div>
+                <button class="formButton buttonStyles">
+                    Crear una cuenta
+                </button>
+            </form>
+            <div class="logIn-container">
+                <h3>¿Ya tenes una cuenta?</h2>
+                <div class="logIn-link">
+                    <a href="log-in.html" class="buttonStyles">Login</a>
+                </div>
+            </div>
+        </div>
+        <!-- Footer START-->
+        <footer id="footer">
+            <div class="footerLeft">
+                <div class="footerLeft__imgContainer">
+                    <img src="logo.png" alt="">
+                </div>
+                <div class="footerLeft__text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste rerum modi corrupti sunt esse facilis. Esse, beatae! Optio, inventore repudiandae.</p>
+                </div>
+            </div>
+            <div class="footerRight">
+                <!-- Mas Informacion -->
+                <ul class="moreInfo-links-container flexRowGap">
+                    <h3>Mas Informacion:</h3>
+                    <li class="moreInfoLink">
+                        <a href="#" target="_blank">
+                            Politicas de Privacidad y de Cookies
+                        </a>
+                    </li>
+                    <li class="moreIngoLink">
+                        <a href="#" target="_blank">
+                            Terminos y Condiciones
+                        </a>
+                    </li>
+                    <li class="moreInfoLink">
+                        <a href="#" target="_blank">
+                            Asistencia Tecnica
+                        </a>
+                    </li>
+                    <li class="moreInfoLink">
+                        <a href="#" target="_blank">
+                            Avisos de Salud
+                        </a>
+                    </li>
+                </ul>
+                <!-- Redes Sociales -->
+                <ul class="socials-container">
+                    <h3>Redes Sociales:</h3>
+                    <li class="socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="socials">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+                <!-- Contacto -->
+                <ul class="contact-container flexRowGap">
+                    <h3>Contacto:</h3>
+                    <li class="contact-link">
+                        <i class="contactLinkIcon fa-solid fa-location-dot"></i>
+                        Calle Cualquiera 123, Cualquier Lugar
+                    </li>
+                    <li class="contact-link">
+                        <i class="contactLinkIcon fa-solid fa-phone"></i>
+                        Cel: 1234-5678
+                    </li>
+                    <li class="contact-link">
+                        <i class="contactLinkIcon fa-solid fa-envelope"></i>
+                        hola@sitioincreible.com
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
