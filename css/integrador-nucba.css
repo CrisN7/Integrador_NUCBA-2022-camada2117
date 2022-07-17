@@ -13,6 +13,7 @@ a {
 }
 
 main {
+    width: 100%;
     background-color: rgb(58, 63, 70);
     color: white;
 }
@@ -37,18 +38,30 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 /* Logo styles */
 .nav__img-container {
     width: auto;
-    height: 100%; /* Averiguar porque cuando pongo auto, la imagen se agranda y por ende me agranda este div. CREO QUE TIENE QUE VER CON ALGO DE FLEX, por que esto me paso cuando le aplique align items al padre de este elemento (el .nav de arriba) */
+    height: 100px;
 }
 
 .nav__img-container > img {
     max-height: 100%;
 }
 
+@media screen and (max-width: 395px) {
+    
+    .nav {
+        justify-content: center;
+    }
+
+    .nav__img-container {
+        width: auto;
+        height: 100px;
+    }
+}
 
 /* Links styles */
 .nav__links-container {
@@ -208,12 +221,6 @@ header {
     width: 100%;
     padding: 1rem;
     text-align: center;
-
-    /*Las lineas de abajo son para centrar el titulo y parrafo, y añadir un espacio entre ellos verticalmente. En vez de aplicar esto voy a usar un margin para el espaciado, que espero que no me traiga problemas despues*/
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; */
 }
 
 .hero__text > h1 {
@@ -379,11 +386,6 @@ textarea {
 }
 
 .form-button:active {
-    /* transition-property: color, border-color, background-color; */
-    /* transition-duration: 0s, 0s, 0s;  */
-    /*Estos valores tenian otros valores pero los cambie a cero porque no se podia apreciar muy bien, al ser un boton el usuario no va a mantener presionado boton por varios segundos.
-    Ahora que me doy cuenta que si tengo los valores del duration en 0 seria lo mismo que no definirlo, ya que por default las transiciones tienen 0s*/
-
     color: black;
     border-color: black;
     background-color: white;
@@ -403,7 +405,7 @@ textarea {
 
 footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     background-color: black;

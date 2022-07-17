@@ -29,20 +29,34 @@ header {
 /* Este nav tiene el contenido */
 .nav {
     width: 100%;
-    height: 80px;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 0px;
 }
 
 /* Logo styles */
 .nav__img-container {
     width: auto;
-    height: 100%; /* Averiguar porque cuando pongo auto, la imagen se agranda y por ende me agranda este div. CREO QUE TIENE QUE VER CON ALGO DE FLEX, por que esto me paso cuando le aplique align items al padre de este elemento (el .nav de arriba) */
+    height: 100px;
 }
 
 .nav__img-container > img {
     max-height: 100%;
+}
+
+@media screen and (max-width: 395px) {
+
+    .nav {
+        justify-content: center;
+    }
+
+    .nav__img-container {
+        width: auto;
+        height: 100px;
+    }
 }
 
 
@@ -173,8 +187,13 @@ header {
 
 /*Log In Container Styles START*/
 
+main {
+    width: 100%;
+}
+
 #login-container {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin: 70px auto;
     padding: 1rem;
 }
@@ -272,7 +291,7 @@ input {
 footer {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
 
     background-color: black;
     color: white;
@@ -300,14 +319,15 @@ footer {
 .footerRight {
     padding: 3rem 1rem;
     display: flex;
-    gap: 100px;
+    flex-wrap: wrap;
+    gap: 50px 100px;
 }
 
 h3 {
     margin-bottom: 10px;
 }
 
-.flexRowGap {
+.linksVerticalSpace {
     display: flex;
     flex-direction: column;
     gap: 7px;
